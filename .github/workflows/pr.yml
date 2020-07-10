@@ -25,6 +25,8 @@ jobs:
     name: Lint PR name
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - uses: viktor-ku/pr-commitlint-action@master
         with:
           config: .commitlintrc.yml
