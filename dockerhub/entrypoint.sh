@@ -8,4 +8,4 @@ else
   export NODE_PATH=$NODE_PATH:/configs/node_modules
 fi
 
-node /index.js
+node /action/index.js
