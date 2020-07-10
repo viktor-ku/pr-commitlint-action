@@ -46,8 +46,6 @@ async function findConfig({ file, cwd }: {file: string, cwd: string}):
 }
 
 async function main() {
-  console.time('Done');
-
   const { context: cx } = github;
   const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE as string;
 
@@ -76,8 +74,5 @@ async function main() {
 
 main()
   .catch((e) => {
-    core.setFailed(` ${e.message}`);
-  })
-  .finally(() => {
-    console.timeEnd('Done');
+    core.setFailed(e.message);
   });
