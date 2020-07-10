@@ -23,7 +23,7 @@
     "eslint": "7.4",
     "eslint-config-airbnb-base": "14.2",
     "eslint-plugin-import": "2.22",
-    "husky": "^4.2.5",
+    "husky": "4.2",
     "typescript": "3.9"
   }
 }
