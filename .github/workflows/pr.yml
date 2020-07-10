@@ -26,3 +26,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: viktor-ku/pr-commitlint-action@master
+        with:
+          config: .commitlintrc.yml
