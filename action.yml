@@ -8,11 +8,11 @@ runs:
 inputs:
   config:
     description: Commitlint config file path
-    default: ./commitlint.config.js
+    default: commitlint.config.js
     required: false
-  should-fail-on-warn:
-    description: Should fail on warnings
-    default: false
+  strict:
+    description: Action will fail even if warnings are detected when in strict mode
+    default: true
     required: false
 
 branding:
