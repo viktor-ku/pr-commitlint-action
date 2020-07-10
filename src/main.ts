@@ -46,7 +46,7 @@ async function findConfig({ file, cwd }: {file: string, cwd: string}):
   }
 }
 
-const fmt = (val: Record<string, unknown>, verbose: boolean) => format(val, {
+const fmt = (val: Record<string, unknown>, verbose: boolean) => format({ results: [val] }, {
   color: true,
   helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',
   verbose,
