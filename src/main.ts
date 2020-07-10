@@ -46,9 +46,10 @@ async function findConfig({ file, cwd }: {file: string, cwd: string}):
   }
 }
 
-const fmt = (val: Record<string, unknown>) => format(val, {
+const fmt = (val: Record<string, unknown>, verbose: boolean) => format(val, {
   color: true,
   helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',
+  verbose,
 });
 
 async function main() {
@@ -57,7 +58,8 @@ async function main() {
 
   const input = {
     config: core.getInput('config'),
-    strict: core.getInput('strict'),
+    strict: Boolean(core.getInput('strict')),
+    verbose: Boolean(core.getInput('verbose')),
   };
 
   if (!cx.payload.pull_request) {
@@ -77,13 +79,13 @@ async function main() {
 
   if (res.errors.length) {
     console.error('Failed due to the following errors:');
-    console.error(fmt(res));
+    console.error(fmt(res, input.verbose));
     process.exit(1);
   }
 
   if (input.strict && res.warnings.length) {
     console.error('Failed due to the following warnings:');
-    console.error(fmt(res));
+    console.error(fmt(res, input.verbose));
     process.exit(1);
   }
 
