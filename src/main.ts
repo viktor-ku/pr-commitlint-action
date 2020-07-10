@@ -46,6 +46,11 @@ async function findConfig({ file, cwd }: {file: string, cwd: string}):
   }
 }
 
+const fmt = (val: Record<string, unknown>) => format(val, {
+  color: true,
+  helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',
+});
+
 async function main() {
   const { context: cx } = github;
   const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE as string;
@@ -72,13 +77,13 @@ async function main() {
 
   if (res.errors.length) {
     console.error('Failed due to the following errors:');
-    console.error(format({ results: [res] }, { color: true }));
+    console.error(fmt(res));
     process.exit(1);
   }
 
   if (input.strict && res.warnings.length) {
     console.error('Failed due to the following warnings:');
-    console.error(format({ results: [res] }, { color: true }));
+    console.error(fmt(res));
     process.exit(1);
   }
 
