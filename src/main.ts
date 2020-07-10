@@ -52,14 +52,16 @@ const fmt = (val: Record<string, unknown>, verbose: boolean) => format({ results
   verbose,
 });
 
+const bool = (val: string): boolean => (val === 'true');
+
 async function main() {
   const { context: cx } = github;
   const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE as string;
 
   const input = {
     config: core.getInput('config'),
-    strict: Boolean(core.getInput('strict')),
-    verbose: Boolean(core.getInput('verbose')),
+    strict: bool(core.getInput('strict')),
+    verbose: bool(core.getInput('verbose')),
   };
 
   if (!cx.payload.pull_request) {
