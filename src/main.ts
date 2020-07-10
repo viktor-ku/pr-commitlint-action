@@ -2,6 +2,7 @@ import * as core from '@actions/core';
 import * as github from '@actions/github';
 import lint from '@commitlint/lint';
 import load from '@commitlint/load';
+import { format } from '@commitlint/format';
 import { QualifiedConfig, LintRuleConfig } from '@commitlint/types';
 
 enum OptionEnum {
@@ -51,7 +52,7 @@ async function main() {
 
   const input = {
     config: core.getInput('config'),
-    shouldFailOnWarn: core.getInput('should-fail-on-warn'),
+    strict: core.getInput('strict'),
   };
 
   if (!cx.payload.pull_request) {
@@ -69,7 +70,19 @@ async function main() {
   const pr = cx.payload.pull_request.title as string;
   const res = await lint(pr, config.rules as LintRuleConfig, config);
 
-  console.log(JSON.stringify(res, null, 2));
+  if (res.errors.length) {
+    console.error('Failed due to the following errors:');
+    console.error(format({ results: [res] }, { color: true }));
+    process.exit(1);
+  }
+
+  if (input.strict && res.warnings.length) {
+    console.error('Failed due to the following warnings:');
+    console.error(format({ results: [res] }, { color: true }));
+    process.exit(1);
+  }
+
+  console.log('All good! 🎉');
 }
 
 main()
