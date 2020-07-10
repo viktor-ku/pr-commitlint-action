@@ -1,0 +1,20 @@
+name: pr-commitlint-action
+description: A GitHub Action that checks Pull Request name with commitlint config, aiming to be consistent with commit names
+
+runs:
+  using: docker
+  image: docker://vikuko/pr-commitlint-action:latest
+
+inputs:
+  config:
+    description: Commitlint config file path
+    default: ./commitlint.config.js
+    required: false
+  should-fail-on-warn:
+    description: Should fail on warnings
+    default: false
+    required: false
+
+branding:
+  icon: check-square
+  color: green

@@ -1,0 +1,15 @@
+{
+  "name": "pr-commitlint-action-prj",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "@commitlint/config-angular": "9.0",
+    "@commitlint/config-conventional": "9.0",
+    "@commitlint/config-lerna-scopes": "9.0",
+    "@commitlint/config-patternplate": "9.0",
+    "commitlint-config-jira": "1.4",
+    "commitlint-plugin-jira-rules": "1.4",
+    "conventional-changelog-lint-config-canonical": "1.0"
+  }
+}
