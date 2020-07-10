@@ -2,7 +2,10 @@
 
 set -e
 
-node ./index.js
-job_exit_code=$?
+if [ -z "$NODE_PATH" ]; then
+  export NODE_PATH=/configs/node_modules
+else
+  export NODE_PATH=$NODE_PATH:/configs/node_modules
+fi
 
-echo Exit code: $job_exit_code
+node /index.js
