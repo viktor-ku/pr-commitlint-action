@@ -22,12 +22,13 @@ jobs:
           git-message: 'chore(release): {version}'
           preset: conventional
 
-      - name: Build the Action
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 12
-        run: npm install
-        run: npm run build
+
+      - name: Install & Build
+        run: npm install && npm run build
 
       - name: Docker Release
         uses: docker/build-push-action@v1
