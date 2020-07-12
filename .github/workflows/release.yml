@@ -19,7 +19,7 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          git-message: 'chore(release): {version}'
+          git-message: 'chore(release): bump to {version}'
           preset: conventional
 
       - name: Setup Node.js
