@@ -1,9 +1,9 @@
 repo = vikuko/pr-commitlint-action
-rev = latest
-tag = $(repo):$(rev)
+version = ${VERSION}
+tag = $(repo):$(version)
 
 all:
-	echo all
+	echo $(tag)
 
 clean/dockerhub:
 	rm -rf dockerhub/action
