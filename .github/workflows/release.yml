@@ -23,7 +23,7 @@ jobs:
           preset: conventional
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v2-beta
         with:
           node-version: 12
 
