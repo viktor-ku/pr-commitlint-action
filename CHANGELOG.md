@@ -1,8 +1,11 @@
-# Changelog
+### [0.1.1](https://github.com/viktor-ku/pr-commitlint-action/compare/v0.1.0...v0.1.1) (2020-07-12)
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## 0.1.0 (2020-07-12)
+### Bug Fixes
+
+* 1 ([2917cb4](https://github.com/viktor-ku/pr-commitlint-action/commit/2917cb41b1ed0729e4d5fd5fdb55ed3fe79ba609))
+
+## [0.1.0](https://github.com/viktor-ku/pr-commitlint-action/compare/3bfbc991bc932ac7ec59f8380e1a97ed9f83ddd3...v0.1.0) (2020-07-12)
 
 
 ### Features
@@ -18,3 +21,4 @@ All notable changes to this project will be documented in this file. See [standa
 * **main:** convert string to the boolean correctly ([6963d13](https://github.com/viktor-ku/pr-commitlint-action/commit/6963d13e8056e50282cc6b7ba0b73f2bf9b54029))
 * **main:** print help message when action failed ([213437c](https://github.com/viktor-ku/pr-commitlint-action/commit/213437c461f327bacd0c1e98f500412ec53cb176))
 * **main:** show formatted error message ([78cae8c](https://github.com/viktor-ku/pr-commitlint-action/commit/78cae8ce1d19dae478c761f0d10473753499e7fd))
+
