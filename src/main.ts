@@ -23,6 +23,7 @@ const fmt = (val: Record<string, unknown>, verbose: boolean) => format({ results
 
 const bool = (val: string): boolean => (val === 'true');
 
+// fix 1
 async function main() {
   const { context: cx } = github;
   const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE as string;
