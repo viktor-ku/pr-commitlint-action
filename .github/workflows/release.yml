@@ -30,15 +30,14 @@ jobs:
       - name: Install & Build
         run: npm install && npm run build
 
-      # - name: Docker Release
-      #   uses: docker/build-push-action@v1
-      #   with:
-      #     username: ${{ secrets.DOCKER_USERNAME }}
-      #     password: ${{ secrets.DOCKER_PASSWORD }}
-      #     repository: vikuko/pr-commitlint-action
-      #     tag_with_ref: true
-      #     tag_with_sha: true
-      #     path: dockerhub
+      - name: Docker Release
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: vikuko/pr-commitlint-action
+          path: dockerhub
+          tags: ${{ steps.changelog.outputs.tag }}
 
       # - name: Github Release
       #   uses: actions/create-release@v1
