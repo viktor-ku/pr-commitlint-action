@@ -4,38 +4,7 @@ import lint from '@commitlint/lint';
 import load from '@commitlint/load';
 import { format } from '@commitlint/format';
 import { QualifiedConfig, LintRuleConfig } from '@commitlint/types';
-
-enum OptionEnum {
-  Some,
-  None,
-}
-
-class Option<T> {
-  private val?: T
-
-  private status: OptionEnum
-
-  static none<T>() {
-    return new Option<T>(OptionEnum.None);
-  }
-
-  static some<T>(val: T) {
-    return new Option<T>(OptionEnum.Some, val);
-  }
-
-  constructor(status: OptionEnum, val?: T) {
-    this.status = status;
-    this.val = val;
-  }
-
-  unwrap(): T {
-    return this.val!;
-  }
-
-  isNone(): boolean {
-    return this.status === OptionEnum.None;
-  }
-}
+import { Option } from './Option';
 
 async function findConfig({ file, cwd }: {file: string, cwd: string}):
   Promise<Option<QualifiedConfig>> {
