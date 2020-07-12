@@ -22,6 +22,8 @@ jobs:
           git-message: 'chore(release): bump to {version}'
           preset: conventionalcommits
 
+      - run: echo ${{ steps.changelog.outputs.tag }}
+
       - name: Setup Node.js
         uses: actions/setup-node@v2-beta
         with:
