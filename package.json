@@ -23,6 +23,7 @@
     "@typescript-eslint/eslint-plugin": "^3.6",
     "@typescript-eslint/parser": "3.6",
     "@zeit/ncc": "0.20",
+    "conventional-changelog-conventionalcommits": "^4.3.0",
     "eslint": "7.4",
     "eslint-config-airbnb-base": "14.2",
     "eslint-plugin-import": "2.22",
