@@ -31,7 +31,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-message: 'chore(release): bump to {version}'
-          preset: conventional-changelog-conventionalcommits
+          preset: conventionalcommits
           pre-commit: ci/dist/index.js
           skip-on-empty: false
 
