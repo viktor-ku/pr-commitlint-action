@@ -10,6 +10,8 @@ jobs:
   changelog:
     name: Generate Changelog
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
       tag: ${{ steps.changelog.outputs.tag }}
       skipped: ${{ steps.changelog.outputs.skipped }}
@@ -28,8 +30,6 @@ jobs:
       - name: Changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-message: 'chore(release): bump to {version}'
