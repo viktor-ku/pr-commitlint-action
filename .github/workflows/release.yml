@@ -28,6 +28,8 @@ jobs:
       - name: Changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-message: 'chore(release): bump to {version}'
