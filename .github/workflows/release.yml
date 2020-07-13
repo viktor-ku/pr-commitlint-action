@@ -32,6 +32,7 @@ jobs:
           git-message: 'chore(release): bump to {version}'
           preset: conventionalcommits
           pre-commit: ${{ github.workspace }}/ci/dist/index.js
+          skip-on-empty: false
 
   release:
     name: Release & Deploy
