@@ -26,7 +26,7 @@ jobs:
 
       - name: Changelog
         id: changelog
-        uses: viktor-ku/conventional-changelog-action@t1
+        uses: viktor-ku/conventional-changelog-action@add-pre-commit-script-file
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-message: 'chore(release): bump to {version}'
