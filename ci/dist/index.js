@@ -4716,11 +4716,6 @@ function preCommit(props) {
     fs_1.default.writeFileSync(actionYmlPath, newYmlContent);
 }
 exports.preCommit = preCommit;
-preCommit({
-    workspace: process.cwd(),
-    version: '1.10.14',
-    tag: 'v1.10.14',
-});
 
 
 /***/ }),
