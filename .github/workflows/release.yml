@@ -16,13 +16,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
+
+      - name: Install & Build
+        run: npm install && npm run ci:build
+
       - name: Changelog
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
+        uses: viktor-ku/conventional-changelog-action@add-pre-commit-script-file
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-message: 'chore(release): bump to {version}'
           preset: conventionalcommits
+          pre-commit: ${{ github.workspace }}/ci/dist/index.js
 
   release:
     name: Release & Deploy
