@@ -3,13 +3,12 @@ import fs from 'fs';
 import yaml from 'yaml';
 
 interface Props {
-  workspace: string;
   tag: string;
   version: string;
 }
 
 export function preCommit(props: Props) {
-  const actionYmlPath = path.resolve(props.workspace, 'action.yml');
+  const actionYmlPath = path.resolve(process.env.GITHUB_WORKSPACE, 'action.yml');
 
   const fileContent = fs.readFileSync(actionYmlPath, 'utf-8');
   const content = yaml.parse(fileContent);
