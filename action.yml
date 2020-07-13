@@ -3,7 +3,7 @@ description: A GitHub Action that checks Pull Request name with commitlint
   config, aiming to be consistent with commit names
 runs:
   using: docker
-  image: docker://vikuko/pr-commitlint-action:v0.1.3
+  image: docker://vikuko/pr-commitlint-action:v0.1.4
 inputs:
   config:
     description: Commitlint config file path

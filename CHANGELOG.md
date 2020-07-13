@@ -1,3 +1,5 @@
+### [0.1.4](https://github.com/viktor-ku/pr-commitlint-action/compare/v0.1.3...v0.1.4) (2020-07-13)
+
 ### [0.1.3](https://github.com/viktor-ku/pr-commitlint-action/compare/v0.1.2...v0.1.3) (2020-07-13)
 
 
