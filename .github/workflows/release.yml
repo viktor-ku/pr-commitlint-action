@@ -27,7 +27,7 @@ jobs:
 
       - name: Changelog
         id: changelog
-        uses: viktor-ku/conventional-changelog-action@master
+        uses: TriPSs/conventional-changelog-action@v3.1.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-message: 'chore(release): bump to {version}'
