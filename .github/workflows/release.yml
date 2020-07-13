@@ -81,6 +81,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: master
+          fetch-depth: 0
 
       - name: Rebase
         run: git rebase origin/release
