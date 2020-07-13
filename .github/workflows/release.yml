@@ -71,9 +71,8 @@ jobs:
       #     release_name: ${{ steps.changelog.outputs.tag }}
       #     body: ${{ steps.changelog.outputs.clean_changelog }}
 
-  # fix 1
-  rebase:
-    name: Sync master and release branches
+  sync:
+    name: Sync master & release
     runs-on: ubuntu-latest
     needs: release
     steps:
