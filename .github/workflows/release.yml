@@ -10,8 +10,6 @@ jobs:
   changelog:
     name: Generate Changelog
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
       tag: ${{ steps.changelog.outputs.tag }}
       skipped: ${{ steps.changelog.outputs.skipped }}
@@ -33,7 +31,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-message: 'chore(release): bump to {version}'
-          preset: conventionalcommits
+          preset: '@commitlint/config-conventional'
           pre-commit: ci/dist/index.js
           skip-on-empty: false
 
