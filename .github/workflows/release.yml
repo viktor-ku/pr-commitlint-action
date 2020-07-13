@@ -39,8 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: changelog
     if: needs.changelog.outputs.skipped == 'false'
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
 
