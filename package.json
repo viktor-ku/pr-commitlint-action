@@ -1,7 +1,7 @@
 {
   "name": "pr-commitlint-action",
   "description": "A GitHub Action that checks Pull Request name with commitlint config, aiming to be consistent with commit names",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "scripts": {
     "lint": "npx eslint --cache --ext .ts,.js .",
     "build": "ncc build src/main.ts -o dockerhub/action",
